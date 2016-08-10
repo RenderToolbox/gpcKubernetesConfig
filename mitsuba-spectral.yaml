@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: mitsuba-spectral-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: mitsuba-spectral
+    spec:
+      containers:
+      - name: mitsuba-spectral-container
+        image: ninjaben/mitsuba-spectral
+        command: ['sleep', '1e6']
+        volumeMounts:
+        - mountPath: /home/ben/Desktop/kueber
+          name: working-folder
+      volumes:
+      - name: working-folder
+        persistentVolumeClaim:
+          claimName: working-volume-claim
+

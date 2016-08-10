@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<scene version="0.5.0">
+   <sensor id="1_Camera" type="perspective">
+      <float name="fov" value="77.3196"/>
+      <float name="nearClip" value="0.1"/>
+      <float name="farClip" value="1000000"/>
+      <string name="fovAxis" value="x"/>
+      <transform name="toWorld">
+         <lookat origin="0 0 0" target="0 0 -1" up="0 1 0"/>
+         <matrix value="0.754406 -0.656121 0.0193824 2 0.633022 0.735024 0.242945 2 -0.173648 -0.17101 0.969846 25 0 0 0 1"/>
+      </transform>
+      <film id="film" type="hdrfilm">
+         <rfilter id="rfilter" type="gaussian">
+            <float name="stddev" value="0.5"/>
+         </rfilter>
+         <integer name="width" value="320"/>
+         <integer name="height" value="240"/>
+         <boolean name="banner" value="false"/>
+         <string name="componentFormat" value="float16"/>
+         <string name="fileFormat" value="openexr"/>
+         <string name="pixelFormat" value="spectrum"/>
+      </film>
+      <sampler id="sampler" type="ldsampler">
+         <integer name="sampleCount" value="8"/>
+      </sampler>
+   </sensor>
+   <bsdf id="1_ZBlue" type="diffuse">
+      <rgb name="reflectance" value="0.11175 0.079625 0.8"/>
+   </bsdf>
+   <bsdf id="2_YGreen" type="diffuse">
+      <rgb name="reflectance" value="0.2191 0.8 0.1403"/>
+   </bsdf>
+   <bsdf id="3_XRed" type="diffuse">
+      <rgb name="reflectance" value="0.8 0.026023 0.11793"/>
+   </bsdf>
+   <emitter id="1_Point_007" type="point">
+      <rgb name="intensity" value="10 10 10"/>
+      <transform name="toWorld">
+         <lookat origin="0 0 0" target="0 0 1" up="0 1 0"/>
+         <matrix value="1 0 0 5 0 1 0 5 0 0 1 -5 0 0 0 1"/>
+      </transform>
+   </emitter>
+   <emitter id="2_Point_006" type="point">
+      <rgb name="intensity" value="10 10 10"/>
+      <transform name="toWorld">
+         <lookat origin="0 0 0" target="0 0 1" up="0 1 0"/>
+         <matrix value="1 0 0 -5 0 1 0 5 0 0 1 -5 0 0 0 1"/>
+      </transform>
+   </emitter>
+   <emitter id="3_Point_005" type="point">
+      <rgb name="intensity" value="10 10 10"/>
+      <transform name="toWorld">
+         <lookat origin="0 0 0" target="0 0 1" up="0 1 0"/>
+         <matrix value="1 0 0 -5 0 1 0 -5 0 0 1 -5 0 0 0 1"/>
+      </transform>
+   </emitter>
+   <emitter id="4_Point_004" type="point">
+      <rgb name="intensity" value="10 10 10"/>
+      <transform name="toWorld">
+         <lookat origin="0 0 0" target="0 0 1" up="0 1 0"/>
+         <matrix value="1 0 0 5 0 1 0 -5 0 0 1 -5 0 0 0 1"/>
+      </transform>
+   </emitter>
+   <emitter id="5_Point_003" type="point">
+      <rgb name="intensity" value="10 10 10"/>
+      <transform name="toWorld">
+         <lookat origin="0 0 0" target="0 0 1" up="0 1 0"/>
+         <matrix value="1 0 0 5 0 1 0 -5 0 0 1 5 0 0 0 1"/>
+      </transform>
+   </emitter>
+   <emitter id="6_Point_002" type="point">
+      <rgb name="intensity" value="10 10 10"/>
+      <transform name="toWorld">
+         <lookat origin="0 0 0" target="0 0 1" up="0 1 0"/>
+         <matrix value="1 0 0 -5 0 1 0 -5 0 0 1 5 0 0 0 1"/>
+      </transform>
+   </emitter>
+   <emitter id="7_Point_001" type="point">
+      <rgb name="intensity" value="10 10 10"/>
+      <transform name="toWorld">
+         <lookat origin="0 0 0" target="0 0 1" up="0 1 0"/>
+         <matrix value="1 0 0 5 0 1 0 5 0 0 1 5 0 0 0 1"/>
+      </transform>
+   </emitter>
+   <emitter id="8_Point" type="point">
+      <rgb name="intensity" value="10 10 10"/>
+      <transform name="toWorld">
+         <lookat origin="0 0 0" target="0 0 1" up="0 1 0"/>
+         <matrix value="1 0 0 -5 0 1 0 5 0 0 1 5 0 0 0 1"/>
+      </transform>
+   </emitter>
+   <shape id="1_ZMinCube_1_Cube_005" type="ply">
+      <string name="filename" value="mitsuba-geometry/1_Cube_005.ply"/>
+      <ref id="1_ZBlue"/>
+      <transform name="toWorld">
+         <matrix value="1 0 0 0 0 1 0 0 0 0 1 -10 0 0 0 1"/>
+      </transform>
+   </shape>
+   <shape id="2_YMinCube_2_Cube_004" type="ply">
+      <string name="filename" value="mitsuba-geometry/2_Cube_004.ply"/>
+      <ref id="2_YGreen"/>
+      <transform name="toWorld">
+         <matrix value="1 0 0 0 0 1 0 -10 0 0 1 0 0 0 0 1"/>
+      </transform>
+   </shape>
+   <shape id="3_XMinCube_3_Cube_003" type="ply">
+      <string name="filename" value="mitsuba-geometry/3_Cube_003.ply"/>
+      <ref id="3_XRed"/>
+      <transform name="toWorld">
+         <matrix value="1 0 0 -10 0 1 0 0 0 0 1 0 0 0 0 1"/>
+      </transform>
+   </shape>
+   <shape id="4_ZPlusSphere_4_Icosphere_004" type="ply">
+      <string name="filename" value="mitsuba-geometry/4_Icosphere_004.ply"/>
+      <ref id="1_ZBlue"/>
+      <transform name="toWorld">
+         <matrix value="1 0 0 0 0 1 0 0 0 0 1 10 0 0 0 1"/>
+      </transform>
+   </shape>
+   <shape id="5_YPlusSphere_5_Icosphere_003" type="ply">
+      <string name="filename" value="mitsuba-geometry/5_Icosphere_003.ply"/>
+      <ref id="2_YGreen"/>
+      <transform name="toWorld">
+         <matrix value="1 0 0 0 0 1 0 10 0 0 1 0 0 0 0 1"/>
+      </transform>
+   </shape>
+   <shape id="6_XPlusSphere_6_Icosphere_002" type="ply">
+      <string name="filename" value="mitsuba-geometry/6_Icosphere_002.ply"/>
+      <ref id="3_XRed"/>
+      <transform name="toWorld">
+         <matrix value="1 0 0 10 0 1 0 0 0 0 1 0 0 0 0 1"/>
+      </transform>
+   </shape>
+   <integrator id="integrator" type="direct">
+      <integer name="shadingSamples" value="32"/>
+   </integrator>
+</scene>
