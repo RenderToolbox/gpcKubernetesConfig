@@ -1,0 +1,4 @@
+#! /bin/bash
+
+MITSUBA_POD=`kubectl get pods --selector="app=mitsuba-spectral" -o jsonpath='{.items[0].metadata.name}'`
+kubectl exec $MITSUBA_POD -- /mitsuba-entrypoint.sh "$@"

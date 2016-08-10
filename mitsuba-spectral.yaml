@@ -1,7 +1,7 @@
-apiVersion: extensions/v1beta1
-kind: Deployment
+apiVersion: v1
+kind: ReplicationController
 metadata:
-  name: mitsuba-spectral-deployment
+  name: mitsuba-spectral
 spec:
   replicas: 1
   template:
@@ -14,10 +14,9 @@ spec:
         image: ninjaben/mitsuba-spectral
         command: ['sleep', '1e6']
         volumeMounts:
-        - mountPath: /home/ben/Desktop/kueber
-          name: working-folder
+        - mountPath: /data/shared
+          name: data-shared
       volumes:
-      - name: working-folder
+      - name: data-shared
         persistentVolumeClaim:
-          claimName: working-volume-claim
-
+          claimName: data-shared-claim
