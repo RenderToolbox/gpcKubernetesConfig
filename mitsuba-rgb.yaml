@@ -1,17 +1,17 @@
 apiVersion: v1
 kind: ReplicationController
 metadata:
-  name: mitsuba-spectral
+  name: mitsuba-rgb
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: mitsuba-spectral
+        app: mitsuba-rgb
     spec:
       containers:
-      - name: mitsuba-spectral-container
-        image: ninjaben/mitsuba-spectral:latest
+      - name: mitsuba-rgb-container
+        image: ninjaben/mitsuba-rgb:latest
         command: ['sleep', '1e6']
         volumeMounts:
         - mountPath: /data/shared
